@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {calculateSalaryFrom} from '../helpers/CalculoCLT';
 import GraphicHorizontalBar from './GraphicHorizontalBar';
-
+import css from '../css.module.css';
 export default class FormSalario extends Component{
     constructor(){
         super();
@@ -31,7 +31,7 @@ export default class FormSalario extends Component{
                         <div className="input-field col s12">
                             <div>
                                 <label>Salário Bruto</label>
-                                <input type="number" min="0" onChange={this.handleChangeInput} value={salary}/>
+                                <input type="number" min="0" onChange={this.handleChangeInput} value={salary} className={css.inputBlack}/>
                             </div>
                         </div>
                     </div>
@@ -39,25 +39,25 @@ export default class FormSalario extends Component{
                         <div className="input-field col s3">
                             <div>
                                 <label>Base INSS</label>
-                                <input type="number" disabled value={baseINSS}/>
+                                <input type="text" disabled value={baseINSS.toLocaleString('br')} className={css.inputBlack}/>
                             </div>
                         </div>
                         <div className="input-field col s3">
                             <div>
                                 <label>Desconto INSS</label>
-                                <input type="number" disabled value={discountINSS}/>
+                                <input type="text" disabled value={discountINSS.toLocaleString('br')} style={{color: "#e67e22", fontWeight: "bold"}}/>
                             </div>
                         </div>
                         <div className="input-field col s3">
                             <div>
                                 <label>Base IRPF</label>
-                                <input type="number" disabled value={baseIRPF}/>
+                                <input type="text" disabled value={baseIRPF.toLocaleString('br')} className={css.inputBlack}/>
                             </div>
                         </div>
                         <div className="input-field col s3">
                             <div>
                                 <label>Desconto IRPF</label>
-                                <input type="number" disabled value={discountIRPF}/>
+                                <input type="text" disabled value={discountIRPF.toLocaleString('br')} style={{color: "#c0392b", fontWeight: "bold"}}/>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ export default class FormSalario extends Component{
                         <div className="input-field col s3">
                             <div>
                                 <label>Salário Líquido</label>
-                                <input type="number" disabled value={netSalary}/>
+                                <input type="text" disabled value={netSalary.toLocaleString('br')} style={{color: "#16a085", fontWeight: "bold"}}/>
                             </div>
                         </div>
                     </div>
