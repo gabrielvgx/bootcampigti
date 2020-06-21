@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {calculateSalaryFrom} from '../helpers/CalculoCLT';
+import {percentualFormat} from '../helpers/Util';
 import GraphicHorizontalBar from './GraphicHorizontalBar';
 import css from '../css.module.css';
 export default class FormSalario extends Component{
@@ -45,7 +46,7 @@ export default class FormSalario extends Component{
                         <div className="input-field col s3">
                             <div>
                                 <label>Desconto INSS</label>
-                                <input type="text" disabled value={discountINSS.toLocaleString('br')} style={{color: "#e67e22", fontWeight: "bold"}}/>
+                                <input type="text" disabled value={`${discountINSS.toLocaleString('br')} (${percentualFormat(salary, discountINSS)}%)`} style={{color: "#e67e22", fontWeight: "bold"}}/>
                             </div>
                         </div>
                         <div className="input-field col s3">
@@ -57,7 +58,7 @@ export default class FormSalario extends Component{
                         <div className="input-field col s3">
                             <div>
                                 <label>Desconto IRPF</label>
-                                <input type="text" disabled value={discountIRPF.toLocaleString('br')} style={{color: "#c0392b", fontWeight: "bold"}}/>
+                                <input type="text" disabled value={`${discountIRPF.toLocaleString('br')} (${percentualFormat(salary, discountIRPF)}%)`} style={{color: "#c0392b", fontWeight: "bold"}}/>
                             </div>
                         </div>
                     </div>
@@ -65,7 +66,7 @@ export default class FormSalario extends Component{
                         <div className="input-field col s3">
                             <div>
                                 <label>Salário Líquido</label>
-                                <input type="text" disabled value={netSalary.toLocaleString('br')} style={{color: "#16a085", fontWeight: "bold"}}/>
+                                <input type="text" disabled value={`${netSalary.toLocaleString('br')} (${percentualFormat(salary, netSalary)}%)`} style={{color: "#16a085", fontWeight: "bold"}}/>
                             </div>
                         </div>
                     </div>

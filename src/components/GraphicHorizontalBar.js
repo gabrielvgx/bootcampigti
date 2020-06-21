@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import css from '../css.module.css'
-import Bar from './Bar'
+import React, { Component } from 'react';
+import css from '../css.module.css';
+import Bar from './Bar';
+import {percentual} from '../helpers/Util';
 
 export default class GraphicHorizontalBar extends Component {
     constructor(){
@@ -12,7 +13,7 @@ export default class GraphicHorizontalBar extends Component {
             <div className={css.barra}>
                 {
                     values.map( (cValue, index) => {
-                        return <Bar value={(totalValue*cValue)/100} color={colors[index]} />
+                        return <Bar value={percentual(totalValue, cValue)} color={colors[index]} />
                     })
                 }
             </div>
